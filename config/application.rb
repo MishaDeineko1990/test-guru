@@ -9,6 +9,6 @@ module TestGuru
     config.load_defaults 6.1
     config.time_zone = "Kyiv"
     config.i18n.available_locales = [:uk, :en, :ru]
-    config.i18n.default_locale = :uk
+    config.i18n.default_locale = :en
   end
 end
