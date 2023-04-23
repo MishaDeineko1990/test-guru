@@ -1,4 +1,9 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :user
+  has_many :questions
+  
+  def self.sorted_test_names(category_name)
+    self.joins(:category).where(categories: {name: category_name}).order(name: :desc).pluck(:name)
+  end
+  
 end

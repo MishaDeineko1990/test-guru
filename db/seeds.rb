@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+category_1 = Category.create!(name: 'Ruby language', description: 'Tests for learning and consolidating knowledge for Ruby')
+category_2 = Category.create!(name: 'JavaScript', description: 'Tests for learning and consolidating knowledge in JavaScript')
+
+user_1 = User.create!(name: 'Misha Deineko', email:'deinekomisha1990@gmail,com', password_digest: 'parolle')
+
+test_1 = Test.create!(name: 'Rails start', level: 1, time_limit: 60, category_id: category_1.id)
+test_2 = Test.create!(name: 'Rails console', level: 1, time_limit: 60, category_id: category_1.id)
+test_3 = Test.create!(name: 'Rails ActiveRecord', level: 2, time_limit: 60, category_id: category_1.id)
+
+question_1 = Question.create!(text: 'Comand for create rails app', test_id: test_1.id)
+
+Answer.create!(text: 'Rails new', question_id: question_1.id, correct: true)
+Answer.create!(text: 'Rails c', question_id: question_1.id, correct: false)
+
+UsersAndTests.create!(user_id: user_1.id, test_id: test_1.id)
+UsersAndTests.create!(user_id: user_1.id, test_id: test_2.id)
+UsersAndTests.create!(user_id: user_1.id, test_id: test_3.id)
