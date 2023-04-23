@@ -5,7 +5,6 @@ class CreateTests < ActiveRecord::Migration[6.1]
       t.integer :level
       t.integer :time_limit
       t.references :category, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

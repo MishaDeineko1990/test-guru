@@ -1,0 +1,3 @@
+class UsersAndTests < ApplicationRecord
+
+end
