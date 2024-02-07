@@ -3,6 +3,7 @@ class CreateUsersAndTests < ActiveRecord::Migration[6.1]
     create_table :users_and_tests do |t|
       t.integer :user_id
       t.integer :test_id
+      t.references :user
 
       t.timestamps
     end
